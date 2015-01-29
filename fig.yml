@@ -1,0 +1,11 @@
+db:
+    image: postgres
+peer:
+    build: .
+    volumes:
+        - /tmp/peer:/opt/peer
+    ports: 
+        - "9080:80"
+        - "9443:443" 
+    links:
+        - db
